@@ -1,0 +1,52 @@
+void Zadacha50()
+{
+    Random random = new Random();
+    int rows = random.Next(2, 6);
+    int columns = random.Next(4,9);
+    
+    int[,] array = new int[rows,coloumns];
+    FillArray(array);
+    PrintArray(array);
+    
+    Console.WriteLine ("введите номер строки искомого элемента");
+    int row = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine ("введите номер столбца искомого элемента");
+    int column = Convert.ToInt32(Console.ReadLine());
+    if (row >= 1 && row <= rows && column >= 1 && column <= columns)
+    {
+        Console.WriteLine($"Искомый элемент array[{row}, {column}] = {array[row - 1; column - 1]}")
+    }
+    
+Zadacha50();
+    
+}
+
+static void FillArray(double[,] array)
+{
+    Random random = new Random ();
+    int rows = array.GetLenght(0);
+    int columns = array.GetLenght(1);
+    for(int i = 0; i < rows;i++)
+    {
+        for(int j = 0; j < columns; j++)
+        { 
+            array[i, j] = Math.Round(random.NextDouble() * 10 - 5); 
+        }
+    }
+}    
+static void PrintArray(double[,] array)
+{
+    Console.WriteLine();
+    Console.WriteLine("Вывод массива");
+    int rows = array.GetLenght(0);
+    int columns = array.GetLenght(1);
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < columns; j++)
+        {
+            Console.Write(array[i,j] + "\t");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine()
+}
