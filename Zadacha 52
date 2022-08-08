@@ -1,0 +1,91 @@
+using System;
+
+namespace Project
+{
+	class programm
+	{
+		static void Main(string[] args)
+		{ 
+			void Zadacha52()
+			{ 
+				//Задача 52
+				
+				Random random = new Random();
+				int rows = random.Next(2,4);
+				int columns = random.Next(4,5);
+				
+				int[,] array = new int[rows, columns];
+				FillArray(array);
+				PrintArray(array);
+				
+				Console.WriteLine("Вывод массива по столбцам");
+				for(int j = 0; j < columns;j++)
+				{
+					double sum = 0;
+					for(int i = 0; i < rows; i++)
+					{
+						sum+= array[i,j];
+					}
+					double average = sum/rows;
+					Console.Write(sum/rows + "\t");
+				}
+				Console.WriteLine();
+				
+			}
+			Zadacha52();
+				
+		}
+		static void FillArray(double[,] array)
+		{
+			Random random = new Random();
+			int rows = array.GetLength(0);
+			int columns = array.GetLength(1);
+			for(int i = 0; i < rows;i++)
+			{
+				for(int j = 0; j < columns; j++)
+				{
+					array[i, j] = Math.Round(random.NextDouble() * 10 - 5,2);
+				}
+			}
+		}
+		static void FillArray(int[,] array)
+		{
+			Random random = new Random();
+			int rows = array.GetLength(0);
+			int columns = array.GetLength(1);
+			for(int i = 0; i < rows;i++)
+			{
+				for(int j = 0; j < columns; j++)
+				{
+					array[i, j] = random.Next(0,10);
+				}
+			}
+		}
+		static void PrintArray(double [,] array)
+		{
+			int rows = array.GetLength(0);
+			int columns = array.GetLength(1);
+			for(int i = 0; i < rows; i++)
+			{
+				for(int j = 0; j < columns; j++)
+				{
+					Console.Write(array[i,j] + "\t");
+				}
+				Console.WriteLine();
+			}
+		}
+		static void PrintArray(int [,] array)
+		{
+			int rows = array.GetLength(0);
+			int columns = array.GetLength(1);
+			for(int i = 0; i < rows; i++)
+			{
+				for(int j = 0; j < columns; j++)
+				{
+					Console.Write(array[i,j] + "\t");
+				}
+				Console.WriteLine();
+			}
+		}
+	}
+}
